@@ -1,0 +1,56 @@
+import java.io.*;
+/**
+ * Write a description of class RainLevel here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class RainLevel
+{
+    int w=0;
+    public void main()throws IOException
+    {
+        w=0;
+        InputStreamReader ir=new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(ir);
+        System.out.println("Enter the no of towers");
+        int n,i;
+        n=Integer.parseInt(br.readLine());
+        int a[]=new int[n];
+        System.out.println("Enter the height of each tower");
+        for(i=0;i<n;i++)
+        {
+            a[i]=Integer.parseInt(br.readLine());
+        }
+        int m=0;
+        lvl(a,n,1,m);
+        System.out.println("The amount oof water collected is "+w);
+    }
+    
+    public int lvl(int a[],int n,int i,int m)
+    {
+        int c;
+        if(a[i]>a[m])
+        {
+            if(i!=n-1)
+                lvl(a,n,i+1,i);
+            return m;
+        }
+        else
+        {
+            if(i!=n-1)
+            {
+               c=lvl(a,n,i+1,m);
+               if(a[c]>a[i])
+               {
+                   w+=a[c]-a[i];
+                   return c;
+                }
+                else
+                    return i;
+            }
+            else
+                return i;
+        }
+    }
+}
