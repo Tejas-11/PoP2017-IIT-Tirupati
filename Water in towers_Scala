@@ -1,21 +1,28 @@
-   object foo{
+object foo {
+   def main(args: Array[String]) {
+      println("Hello, world!")
+      var ar = Array(2, 6, 3, 5, 2, 8, 1, 4, 2, 2, 5, 3, 5, 7, 4, 1);
+      w=0;
+    lvl(ar,ar.length,1,0);
+    println("The water collected is "+w);
+   }
    var w: Int=0;
-    def lvl(ar: Array[Int],n: Int,i: Int,m: Int): Unit={
-        var c: Int;
-        if(a[i]>a[m])
+    def lvl(ar: Array[Int],n: Int,i: Int,m: Int): Int={
+        var c: Int=0;
+        if(ar(i)>ar(m))
         {
             if(i!=n-1)
-                lvl(a,n,i+1,i);
+                lvl(ar,n,i+1,i);
             return m;
         }
         else
         {
             if(i!=n-1)
             {
-               c=lvl(a,n,i+1,m);
-               if(a[c]>a[i])
+               c=lvl(ar,n,i+1,m);
+               if(ar(c)>ar(i))
                {
-                   w+=a[c]-a[i];
+                   w+=ar(c)-ar(i);
                    return c;
                 }
                 else
@@ -25,13 +32,7 @@
                 return i;
         }
     }
-    def main()={
-    var ar = Array(2, 6, 3, 5, 2, 8, 1, 4, 2, 2, 5, 3, 5, 7, 4, 1);
-    lvl(ar,ar.length,1,0);
-    println("The water collected is "+w);
-    }
 }
-
 
 
 import java.io.*;
