@@ -1,10 +1,37 @@
+   object foo{
+   var w: Int=0;
+    def lvl(ar: Array[Int],n: Int,i: Int,m: Int): Unit={
+        var c: Int;
+        if(a[i]>a[m])
+        {
+            if(i!=n-1)
+                lvl(a,n,i+1,i);
+            return m;
+        }
+        else
+        {
+            if(i!=n-1)
+            {
+               c=lvl(a,n,i+1,m);
+               if(a[c]>a[i])
+               {
+                   w+=a[c]-a[i];
+                   return c;
+                }
+                else
+                    return i;
+            }
+            else
+                return i;
+        }
+    }
+    def main()={
+    }
+}
+
+
+
 import java.io.*;
-/**
- * Write a description of class RainLevel here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class RainLevel
 {
     int w=0;
