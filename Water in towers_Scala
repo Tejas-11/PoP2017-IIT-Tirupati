@@ -26,6 +26,9 @@
         }
     }
     def main()={
+    var ar = Array(2, 6, 3, 5, 2, 8, 1, 4, 2, 2, 5, 3, 5, 7, 4, 1);
+    lvl(ar,ar.length,1,0);
+    println("The water collected is "+w);
     }
 }
 
