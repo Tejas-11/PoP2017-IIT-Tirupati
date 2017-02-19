@@ -1,0 +1,16 @@
+import scala.collection.mutable.Stack
+
+object Foo {
+  def main(args: Array[String]) {
+    val a=scala.io.StdIn.readLine()
+    var par = Stack[Int]()
+    var i=0
+    for(i-> 0 to a.size -1) {
+      if(a(i)=='(')
+       {par.push(i);}
+      else
+       {println(par.top+"-"+i);
+        par.pop;}
+    }
+  }
+}
