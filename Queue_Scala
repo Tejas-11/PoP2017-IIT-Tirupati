@@ -1,0 +1,7 @@
+import scala.collection.mutable.Queue
+
+
+var fruits = Queue[String]()
+q.enqueue("pineapple")
+q.dequeue
+println(fruits.isEmpty)
