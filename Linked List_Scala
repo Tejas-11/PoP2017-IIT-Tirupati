@@ -1,0 +1,27 @@
+class Node(i: Int, n:Node){
+  val v = i
+  val next = n
+}
+
+class Foo() {
+  var start: Node =null
+
+  def add(v:Int){
+    val c = start
+    this.start = new Node(v,c)
+  }
+  
+  def rem(){
+    val c = start.next
+    this.start = c
+  }
+
+  def print:Unit  = {
+    var p = start;
+    println(p.v)
+    while(p != null){
+      println(p.v)
+      p = p.next;
+    }
+  }
+}
